@@ -8,20 +8,23 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import model.enums.UserRole;
-
+import model.enums.EquipmentStatus;
+import model.enums.EquipmentType;
 
 @Entity
 @Setter
 @Getter
-@AllArgsConstructor
 @NoArgsConstructor
-public class User {
+@AllArgsConstructor
+public class Equipment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String username;
-    private String password;
-    private UserRole role;
+    private String name;
+    private EquipmentType type;
+    private EquipmentStatus status;
+
+
+
 }

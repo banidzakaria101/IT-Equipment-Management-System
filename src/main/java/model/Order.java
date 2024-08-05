@@ -8,20 +8,22 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import model.enums.UserRole;
+import model.enums.OrderStatus;
 
+import java.time.LocalDate;
 
 @Entity
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String username;
-    private String password;
-    private UserRole role;
+    private LocalDate orderDate;
+    private LocalDate deliveryDate;
+    private OrderStatus status;
+
 }

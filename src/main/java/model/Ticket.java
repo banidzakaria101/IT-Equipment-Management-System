@@ -8,20 +8,22 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import model.enums.UserRole;
+import model.enums.TicketStatus;
 
+import java.time.LocalDate;
 
 @Entity
-@Setter
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String username;
-    private String password;
-    private UserRole role;
+    private TicketStatus status;
+    private String description;
+    private LocalDate createdDate;
+    private LocalDate resolvedDate;
 }
