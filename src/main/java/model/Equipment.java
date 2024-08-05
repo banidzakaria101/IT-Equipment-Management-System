@@ -1,15 +1,14 @@
 package model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import model.enums.EquipmentStatus;
 import model.enums.EquipmentType;
+
+import java.util.List;
 
 @Entity
 @Setter
@@ -24,6 +23,9 @@ public class Equipment {
     private String name;
     private EquipmentType type;
     private EquipmentStatus status;
+
+    @OneToMany(mappedBy = "equipment", cascade = CascadeType.ALL)
+    private List<Ticket> tickets;
 
 
 
