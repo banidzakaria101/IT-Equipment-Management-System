@@ -25,6 +25,10 @@ public class EquipmentService {
         equipmentRepo.delete(equipment);
     }
 
+    public void deleteEquipmentById(Long id){
+        equipmentRepo.deleteById(id);
+    }
+
     public List<Equipment> listAllEquipments(){
         return equipmentRepo.findAll();
     }
