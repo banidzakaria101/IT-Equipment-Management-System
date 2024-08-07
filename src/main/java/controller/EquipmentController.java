@@ -1,6 +1,6 @@
-package Controller;
+package controller;
 
-import Services.EquipmentService;
+import services.EquipmentService;
 import model.Equipment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

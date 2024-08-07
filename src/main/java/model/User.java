@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import model.enums.UserRole;
 
 import java.util.List;
 
@@ -23,8 +22,6 @@ public class User {
     private String username;
     private String password;
     @Enumerated(EnumType.STRING)
-
-    private UserRole role;
 
     @OneToMany(mappedBy = "employee")
     private List<Ticket> tickets;

@@ -15,12 +15,13 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Ticket {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Enumerated(EnumType.STRING)
     private TicketStatus status;
+
     private String description;
     private LocalDate createdDate;
     private LocalDate resolvedDate;
@@ -31,9 +32,13 @@ public class Ticket {
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
-    private User employee;
+    private Employee employee;
 
     @ManyToOne
     @JoinColumn(name = "technician_id")
-    private User technician;
+    private Technician technician;
+
+    @ManyToOne
+    @JoinColumn(name = "breakdown_id")
+    private Breakdown breakdown;
 }

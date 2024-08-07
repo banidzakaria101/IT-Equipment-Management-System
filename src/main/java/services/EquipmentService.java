@@ -1,11 +1,12 @@
-package Services;
+package services;
 
-import Repository.EquipmentRepository;
+import repository.EquipmentRepository;
 import model.Equipment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EquipmentService {
@@ -29,7 +30,16 @@ public class EquipmentService {
         equipmentRepo.deleteById(id);
     }
 
+
     public List<Equipment> listAllEquipments(){
         return equipmentRepo.findAll();
     }
+
+    public Optional<Equipment> findById(Long id) {
+        return equipmentRepo.findById(id);
+    }
+
+//    public Equipment updateEquipment(Equipment equipment){
+//        return equipmentRepo.u
+//    }
 }

@@ -1,6 +1,6 @@
-package Controller;
+package controller;
 
-import Services.UserService;
+import services.UserService;
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
