@@ -19,18 +19,5 @@ public class UserController {
         return userService.addUser(user);
     }
 
-    @DeleteMapping(name = "/delete")
-    public void deleteUser(@RequestBody User user){
-        userService.deleteUser(user);
-    }
 
-    @GetMapping(name = "/by-name")
-    public User getUser(@RequestBody User user){
-        return userService.findUserByName(user);
-    }
-
-    @GetMapping(name = "all-users")
-    public List<User> getAllUsers(){
-        return userService.listAllUsers();
-    }
 }

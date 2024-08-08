@@ -30,6 +30,9 @@ public class EquipmentService {
         equipmentRepo.deleteById(id);
     }
 
+    public Equipment findEquipmentById(Long id){
+        return equipmentRepo.findById(id).get();
+    }
 
     public List<Equipment> listAllEquipments(){
         return equipmentRepo.findAll();

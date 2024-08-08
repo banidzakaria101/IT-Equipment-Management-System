@@ -1,12 +1,12 @@
 package controller;
 
+import services.BreakdownService;
 import services.EquipmentService;
 import model.Breakdown;
 import model.Employee;
 import model.Equipment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import service.BreakdownService;
 
 import java.util.Optional;
 
@@ -22,9 +22,10 @@ public class BreakdownController {
 
     @PostMapping("/report")
     public Breakdown reportBreakdown(@RequestParam Long equipmentId, @RequestParam Long employeeId, @RequestBody String description) {
-        Optional<Equipment> equipment = equipmentService.findById(equipmentId);
-        Employee employee = new Employee(); // Load employee by ID from your employee service or repository
+        Equipment equipment = equipmentService.findEquipmentById(employeeId);
+        Employee employee = new Employee();
 
         return breakdownService.reportBreakdown(equipment, employee, description);
     }
+
 }

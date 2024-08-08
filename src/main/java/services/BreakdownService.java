@@ -1,4 +1,4 @@
-package service;
+package services;
 
 import repository.BreakdownRepository;
 import model.Breakdown;
@@ -15,7 +15,7 @@ public class BreakdownService {
     @Autowired
     private BreakdownRepository breakdownRepository;
 
-    public Breakdown reportBreakdown(Optional<Equipment> equipment, Employee employee, String description) {
+    public Breakdown reportBreakdown(Equipment equipment, Employee employee, String description) {
         Breakdown breakdown = new Breakdown();
         breakdown.setEquipment(equipment);
         breakdown.setReportedBy(employee);
