@@ -1,0 +1,22 @@
+<div class="list-technician-container">
+  <h2>Technicians List</h2>
+
+  <table class="technician-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let technician of technicians">
+        <td>{{ technician.id }}</td>
+        <td>{{ technician.username }}</td>
+        <td>
+          <button (click)="deleteTechnician(technician.id)" class="delete-btn">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,22 @@
+/* admin-board.component.css */
+.admin-layout {
+  display: flex;
+  height: 100vh; /* Full height */
+}
+
+app-sidenav {
+  width: 250px; /* Width of the sidebar */
+  background-color: #2c3344; /* Dark background for the sidebar */
+  color: white;
+  position: fixed; /* Fix the sidebar in place */
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.content {
+  margin-left: 250px; /* Same as sidebar width to avoid overlap */
+  padding: 20px;
+  width: calc(100% - 250px); /* Full width minus the sidebar */
+  overflow-y: auto; /* Scrollable content if needed */
+}

@@ -1,0 +1,20 @@
+<div class="add-technician-container">
+  <h2>Add Employee</h2>
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input id="username" formControlName="username" type="text" class="form-control" />
+      <div *ngIf="employeeForm.get('username')?.invalid && employeeForm.get('username')?.touched" class="error">
+        Username is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" formControlName="password" type="password" class="form-control" />
+      <div *ngIf="employeeForm.get('password')?.invalid && employeeForm.get('password')?.touched" class="error">
+        Password is required.
+      </div>
+    </div>
+    <button type="submit" [disabled]="employeeForm.invalid" class="submit-btn">Add Employee</button>
+  </form>
+</div>

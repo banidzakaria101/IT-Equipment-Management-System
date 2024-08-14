@@ -1,0 +1,29 @@
+.logo {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.side-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.side-menu li {
+  margin: 20px 0;
+}
+
+.side-menu a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 10px;
+  transition: background 0.3s ease;
+}
+
+.side-menu a:hover {
+  background-color: #34495e;
+}
+
+.side-menu a.active {
+  background-color: #2980b9;
+}

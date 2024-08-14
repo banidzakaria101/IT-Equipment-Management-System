@@ -1,0 +1,27 @@
+/* employee-page.component.css */
+.employee-page {
+  display: flex;
+  gap: 20px; /* Space between the two panels */
+}
+
+.left-panel {
+  flex: 1; /* The form will take up 50% of the width */
+  max-width: 50%; /* Ensure it doesn't exceed half the width */
+}
+
+.right-panel {
+  flex: 2; /* The table will take up the remaining space */
+  max-width: 50%; /* Ensure it doesn't exceed half the width */
+  overflow-x: auto; /* Scrollable if the content overflows */
+}
+
+@media (max-width: 768px) {
+  .employee-page {
+    flex-direction: column; /* Stack the panels on smaller screens */
+  }
+
+  .left-panel, .right-panel {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+}
+
