@@ -1,0 +1,24 @@
+/* employee-board.component.css */
+.employee-layout {
+  display: flex;
+  height: 100vh; /* Full height of the viewport */
+}
+
+app-employee-sidenav {
+  width: 250px; /* Width of the sidebar */
+  background-color: #34495e; /* Dark background for the sidebar */
+  color: white;
+  position: fixed; /* Fix the sidebar in place */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto; /* Scrollable content if needed */
+}
+
+.content {
+  margin-left: 250px; /* Space for the sidebar */
+  padding: 20px;
+  width: calc(100% - 250px); /* Full width minus the sidebar */
+  overflow-y: auto; /* Scrollable content if needed */
+  background-color: #f4f4f4; /* Light background */
+}

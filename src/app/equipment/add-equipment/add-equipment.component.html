@@ -1,0 +1,17 @@
+<form [formGroup]="equipmentForm" (ngSubmit)="onSubmit()" class="equipment-form">
+  <div class="form-group">
+    <label for="name" class="form-label">Name:</label>
+    <input id="name" formControlName="name" class="form-input" />
+  </div>
+
+  <div class="form-group">
+    <label for="status" class="form-label">Status:</label>
+    <select id="status" formControlName="status" class="form-select">
+      <option *ngFor="let option of statusOptions" [value]="option.value">
+        {{ option.label }}
+      </option>
+    </select>
+  </div>
+
+  <button type="submit" [disabled]="equipmentForm.invalid" class="form-button">Add Equipment</button>
+</form>

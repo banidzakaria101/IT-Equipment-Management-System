@@ -1,29 +1,53 @@
-.logo {
-  text-align: center;
-  padding: 20px 0;
+/* admin-sidenav.component.css */
+
+/* Sidebar container */
+.admin-sidenav {
+  width: 250px; /* Fixed width for the sidebar */
+  background: linear-gradient(to bottom, #34495e, #2c3e50); /* Gradient background */
+  color: white;
+  position: fixed; /* Fixed position on the side */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3); /* Shadow on the right edge */
+  overflow-y: auto; /* Scrollable content if needed */
+  display: flex;
+  flex-direction: column;
 }
 
+/* Sidebar list */
 .side-menu {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
+  margin: 0;
+  flex: 1; /* Make sure the list takes up available space */
 }
 
+/* Sidebar list items */
 .side-menu li {
-  margin: 20px 0;
+  margin: 0;
 }
 
+/* Sidebar links styled as buttons */
 .side-menu a {
   text-decoration: none;
-  color: white;
+  color: #ecf0f1; /* Light text color */
   display: block;
-  padding: 10px;
-  transition: background 0.3s ease;
+  padding: 15px 20px; /* Padding for spacing */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  font-size: 16px; /* Font size */
+  font-weight: 500; /* Slightly bolder text */
 }
 
+/* Hover state for sidebar links */
 .side-menu a:hover {
-  background-color: #34495e;
+  background-color: #2c3e50; /* Darker background on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
 }
 
+/* Active state for sidebar links */
 .side-menu a.active {
-  background-color: #2980b9;
+  background-color: #2980b9; /* Highlighted background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow */
 }

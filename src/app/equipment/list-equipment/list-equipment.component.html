@@ -1,0 +1,24 @@
+<div class="list-technician-container">
+  <h2>Equipment List</h2>
+  <table class="technician-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let equipment of equipmentList">
+        <td>{{ equipment.id }}</td>
+        <td>{{ equipment.name }}</td>
+        <td>{{ equipment.status }}</td>
+        <td>
+          <button class="delete-btn" (click)="deleteEquipment(equipment.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

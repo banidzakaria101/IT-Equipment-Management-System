@@ -18,8 +18,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmployeePageComponent } from './employee/employee-page/employee-page.component';
 import { TechnicianPageComponent } from './technician/technician-page/technician-page.component';
 import { SidenavComponent } from './admin/admin-board/sidenav/sidenav.component';
-import { AddTicketComponent } from './ticket/add-ticket/add-ticket.component';
 import { ListTicketComponent } from './ticket/list-ticket/list-ticket.component';
+import { EmployeeBoardComponent } from './employee-board/employee-board.component';
+import { EmployeeSidenavComponent } from './employee-board/employee-sidenav/employee-sidenav.component';
+import { AddTicketComponent } from './ticket/add-ticket/add-ticket.component';
+import { AddEquipmentComponent } from './equipment/add-equipment/add-equipment.component';
+import { ListEquipmentComponent } from './equipment/list-equipment/list-equipment.component';
+import { EquipmentPageComponent } from './equipment/equipment-page/equipment-page.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +39,11 @@ import { ListTicketComponent } from './ticket/list-ticket/list-ticket.component'
     SidenavComponent,
     AddTicketComponent,
     ListTicketComponent,
+    EmployeeBoardComponent,
+    EmployeeSidenavComponent,
+    AddEquipmentComponent,
+    ListEquipmentComponent,
+    EquipmentPageComponent,
   ],
   imports: [
     BrowserModule,

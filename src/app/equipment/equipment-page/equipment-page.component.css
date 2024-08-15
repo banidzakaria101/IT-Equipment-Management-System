@@ -1,0 +1,18 @@
+/* equipment-board.component.css */
+.equipment-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-panel, .right-panel {
+  flex: 1;
+  padding: 20px;
+}
+
+.left-panel {
+  margin-right: 10px; /* Space between panels */
+}
+
+.right-panel {
+  margin-left: 10px; /* Space between panels */
+}
