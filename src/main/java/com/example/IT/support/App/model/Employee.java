@@ -1,6 +1,7 @@
 package com.example.IT.support.App.model;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
@@ -15,6 +16,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@DiscriminatorValue("employee")
 public class Employee extends User {
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private List<Ticket> tickets;

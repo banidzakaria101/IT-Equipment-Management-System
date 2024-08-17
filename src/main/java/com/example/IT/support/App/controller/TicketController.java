@@ -1,5 +1,6 @@
 package com.example.IT.support.App.controller;
 
+import com.example.IT.support.App.services.EmployeeService;
 import com.example.IT.support.App.services.TicketService;
 import com.example.IT.support.App.model.Ticket;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,13 +9,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/tickets")
+@RequestMapping("api/tickets")
 public class TicketController {
 
     @Autowired
     private TicketService ticketService;
 
-    @PostMapping("/ticket")
+    @PostMapping("/create")
     public Ticket createTicket(@RequestParam Long employeeId, @RequestBody Ticket ticket) {
         return ticketService.createTicket(employeeId, ticket);
     }
@@ -27,6 +28,11 @@ public class TicketController {
     @GetMapping("/list")
     public List<Ticket> listTickets() {
         return ticketService.getAllTickets();
+    }
+
+    @GetMapping("/list/{employeeId}")
+    public List<Ticket> listTicketsByEmployeeId(@PathVariable Long employeeId) {
+        return ticketService.findTicketByEmployee(employeeId);
     }
 
 

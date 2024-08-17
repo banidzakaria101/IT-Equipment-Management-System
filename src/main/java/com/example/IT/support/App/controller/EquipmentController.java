@@ -8,23 +8,23 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(name = "/api/equipment")
+@RequestMapping("/api/equipment")
 public class EquipmentController {
 
     @Autowired
     private EquipmentService equipmentService;
 
-    @PostMapping(name = "/add")
+    @PostMapping("/add")
     public Equipment addEquipment(@RequestBody Equipment equipment){
         return equipmentService.addEquipment(equipment);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteEquipment(@RequestParam Long id){
+    public void deleteEquipment(@PathVariable Long id){
         equipmentService.deleteEquipmentById(id);
     }
 
-    @GetMapping(name = "/listaze    &é")
+    @GetMapping("/list")
     public List<Equipment> getAllEquipments(){
         return equipmentService.listAllEquipments();
     }

@@ -36,7 +36,7 @@ public class TicketService {
         Employee employee1 = employeeRepo.findById(employeeId).get();
         ticket.setEmployee(employee1);
         ticket.setCreatedDate(LocalDate.now());
-        ticket.setStatus(TicketStatus.ASSIGNED);
+        ticket.setStatus(TicketStatus.OPEN);
 
         Ticket ticket1 = ticketRepository.save(ticket);
         EquipmentHistory history = new EquipmentHistory();
@@ -44,7 +44,7 @@ public class TicketService {
         history.setTimestamp(LocalDateTime.now());
         history.setEquipment(ticket1.getEquipment());
         history.setAction("Ticket Created");
-        history.setDetails("Ticket created with description: " + ticket1.getDescription());
+        history.setDetails("Ticket description: " + ticket1.getDescription());
 
         equipmentHistoryRepo.save(history);
 
@@ -73,9 +73,8 @@ public class TicketService {
         return ticketRepository.findAll();
     }
 
-    public Ticket getTicket(Long ticketId) {
-        return ticketRepository.findById(ticketId).orElseThrow();
-    }
+    public List<Ticket> findTicketByEmployee(Long employeeId) {
+        return ticketRepository.findTicketByEmployeeId(employeeId);    }
 
     public Ticket getTicketStatus(Long ticketId) {
         return ticketRepository.findById(ticketId).orElseThrow();

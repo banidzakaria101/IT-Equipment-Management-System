@@ -21,7 +21,8 @@ public class Equipment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private EquipmentType type;
+
+    @Enumerated(EnumType.STRING)
     private EquipmentStatus status;
 
     @OneToMany(mappedBy = "equipment", cascade = CascadeType.ALL)

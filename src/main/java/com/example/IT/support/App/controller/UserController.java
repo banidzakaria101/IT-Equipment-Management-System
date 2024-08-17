@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(name = "/api/user")
+@RequestMapping("/api/user")
 public class UserController {
 
     @Autowired
@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @GetMapping("/name")
-    public User getUser(@RequestBody User username){
+    public User getUser(@RequestBody String username){
         return userService.findUserByUsername(username);
     }
 
