@@ -25,6 +25,8 @@ import { AddTicketComponent } from './ticket/add-ticket/add-ticket.component';
 import { AddEquipmentComponent } from './equipment/add-equipment/add-equipment.component';
 import { ListEquipmentComponent } from './equipment/list-equipment/list-equipment.component';
 import { EquipmentPageComponent } from './equipment/equipment-page/equipment-page.component';
+import { LoginComponent } from './login/login.component';
+import { TechnicianBoardComponent } from './technician-board/technician-board.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { EquipmentPageComponent } from './equipment/equipment-page/equipment-pag
     AddEquipmentComponent,
     ListEquipmentComponent,
     EquipmentPageComponent,
+    LoginComponent,
+    TechnicianBoardComponent,
   ],
   imports: [
     BrowserModule,

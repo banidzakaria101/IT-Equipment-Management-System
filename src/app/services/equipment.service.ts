@@ -7,17 +7,22 @@ import { Equipment } from '../models/equipment.model';
   providedIn: 'root'
 })
 export class EquipmentService {
-
   private apiUrl = 'http://localhost:8080/api/equipment';
 
   constructor(private http: HttpClient) { }
 
+  // Fetch all equipment
   getEquipments(): Observable<Equipment[]> {
     return this.http.get<Equipment[]>(`${this.apiUrl}/list`);
   }
 
-
-  addEquipment(equipment: Equipment): Observable<any> {
+  // Add new equipment
+  addEquipment(equipment: Equipment): Observable<Equipment> {
     return this.http.post<Equipment>(`${this.apiUrl}/add`, equipment);
+  }
+
+  // Delete equipment by ID
+  deleteEquipment(id: number | undefined): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/delete/${id}`);
   }
 }

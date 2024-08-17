@@ -1,4 +1,4 @@
-<!-- add-ticket.component.html -->
+<!-- src/app/components/add-ticket/add-ticket.component.html -->
 <div class="add-ticket-container">
   <h2>Create a New Ticket</h2>
   <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
@@ -17,9 +17,9 @@
     <div class="form-group">
       <label for="status">Status</label>
       <select id="status" formControlName="status" class="form-control">
-        <option value="OPEN">Open</option>
-        <option value="IN_PROGRESS">In Progress</option>
-        <option value="RESOLVED">Resolved</option>
+        <option *ngFor="let status of statusOptions" [value]="status.value">
+          {{ status.key }}
+        </option>
       </select>
     </div>
 
